@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "forge-llm"
+name = "forge-infer"
 version = "0.1.0"
 description = "Metapackage bundling qwen-think and qwen3.6-mtp under a shared namespace"
 readme = "README.md"
@@ -37,5 +37,5 @@ dev = [
 packages = ["forge"]
 
 [project.urls]
-Homepage = "https://github.com/ArkaD171717/forge-llm"
-Repository = "https://github.com/ArkaD171717/forge-llm"
+Homepage = "https://github.com/ArkaD171717/Forge-LLM"
+Repository = "https://github.com/ArkaD171717/Forge-LLM"

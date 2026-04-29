@@ -1,17 +1,17 @@
-# forge-llm
+# forge-infer
 
 Metapackage bundling qwen-think and qwen3.6-mtp under a shared namespace.
 
-`pip install forge-llm` pulls in [qwen-think](https://github.com/ArkaD171717/qwen3-Think) and [qwen3.6-mtp](https://github.com/ArkaD171717/Qwen3.6-MTP) as dependencies and re-exports their key APIs under a single `forge` namespace. This is packaging and narrative, not new code.
+`pip install forge-infer` pulls in [qwen-think](https://github.com/ArkaD171717/qwen3-Think) and [qwen3.6-mtp](https://github.com/ArkaD171717/Qwen3.6-MTP) as dependencies and re-exports their key APIs under a single `forge` namespace. This is packaging and narrative, not new code.
 
 ## Why this exists
 
-Two focused packages -- thinking-mode session control and MTP speculative decoding -- that belong together. `forge-llm` gives them a shared identity so you can recommend, install, and document them as a unit instead of scattering links across READMEs.
+Two focused packages -- thinking-mode session control and MTP speculative decoding -- that belong together. `forge-infer` gives them a shared identity so you can recommend, install, and document them as a unit instead of scattering links across READMEs.
 
 ## Install
 
 ```bash
-pip install forge-llm
+pip install forge-infer
 ```
 
 This installs both `qwen-think` and `qwen3.6-mtp` automatically.
