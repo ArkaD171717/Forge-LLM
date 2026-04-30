@@ -4,14 +4,14 @@ build-backend = "hatchling.build"
 
 [project]
 name = "forge-infer"
-version = "0.1.1"
-description = "Metapackage bundling qwen-think and qwen3.6-mtp under a shared namespace"
+version = "0.2.0"
+description = "Inference control plane for reasoning-aware open-source models"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 authors = [{ name = "ArkaD171717" }]
-keywords = ["qwen", "mtp", "speculative-decoding", "thinking", "inference"]
+keywords = ["qwen", "mtp", "speculative-decoding", "thinking", "inference", "repo-context"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -26,6 +26,7 @@ classifiers = [
 dependencies = [
     "qwen-think>=0.1.0",
     "qwen3.6-mtp>=0.1.0",
+    "qwen3-repo>=0.1.0",
 ]
 
 [project.optional-dependencies]
