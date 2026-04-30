@@ -3,12 +3,13 @@ import forge
 
 def test_version_exists():
     assert isinstance(forge.__version__, str)
-    assert forge.__version__ == "0.1.0"
+    assert forge.__version__ == "0.2.0"
 
 
 def test_all_lists_submodules():
     assert "session" in forge.__all__
     assert "mtp" in forge.__all__
+    assert "context" in forge.__all__
 
 
 def test_session_reexport():
