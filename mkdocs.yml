@@ -1,8 +1,8 @@
 site_name: Forge
 site_description: Inference control plane for reasoning-aware open-source models
-site_url: https://arkad171717.github.io/Forge-Infer
-repo_url: https://github.com/ArkaD171717/Forge-Infer
-repo_name: ArkaD171717/Forge-Infer
+site_url: https://arkad171717.github.io/FORGE-Infer
+repo_url: https://github.com/ArkaD171717/FORGE-Infer
+repo_name: ArkaD171717/FORGE-Infer
 
 theme:
   name: material

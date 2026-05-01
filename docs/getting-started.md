@@ -8,13 +8,53 @@ The metapackage pulls in the core libraries:
 pip install forge-infer
 ```
 
+For the full suite including ForgeEngine's OpenAI backend:
+
+```bash
+pip install forge-infer[openai]
+```
+
 Or install individual packages if you only need one layer:
 
 ```bash
 pip install qwen-think     # session management
 pip install qwen3.6-mtp    # MTP tuning
-pip install qwen3-repo      # repo ingestion
+pip install qwen3-repo     # repo ingestion
 ```
+
+Optional product layers:
+
+```bash
+pip install forge-infer[observe]     # OTel instrumentation
+pip install forge-infer[cloud]       # OpenAI-compatible proxy
+pip install forge-infer[dashboard]   # observability UI
+pip install forge-infer[all]         # everything
+```
+
+## ForgeEngine: the integration layer
+
+ForgeEngine chains session + MTP + context into one configure-once object. This is the recommended way to use Forge if you want everything wired together.
+
+```python
+from forge import ForgeEngine
+
+engine = ForgeEngine(
+    model="Qwen3.6-27B",
+    base_url="http://localhost:8000/v1",
+    gpu_id="rtx-4090",
+)
+
+# Ingest a codebase for context
+engine.ingest_local("/path/to/project")
+
+# Chat with full thinking control, MTP config, and repo context
+response = engine.chat("Why is the auth middleware rejecting valid tokens?")
+
+# Check current state
+print(engine.status())
+```
+
+ForgeEngine requires an OpenAI-compatible backend (vLLM, SGLang, Ollama, or forge-cloud). Install with `pip install forge-infer[openai]`.
 
 ## Session layer: thinking mode control
 

@@ -5,17 +5,27 @@
 
 ## What's shipped
 
-The OSS foundation is complete. All core packages are published and installable.
+### Core libraries (Phase 1)
 
 | Package | Version | PyPI | Status |
 |---------|---------|------|--------|
 | qwen-think | v0.1.2 | `pip install qwen-think` | Shipped |
 | qwen3.6-mtp | v0.1.1 | `pip install qwen3.6-mtp` | Shipped |
 | qwen3-repo | v0.1.0 | `pip install qwen3-repo` | Shipped |
-| forge-infer | v0.1.0 | `pip install forge-infer` | Shipped |
+| forge-infer | v0.3.0 | `pip install forge-infer` | Shipped (includes ForgeEngine) |
 | qwen-compat | -- | [GitHub](https://github.com/ArkaD171717/Qwen3.6-Compat) | Test matrix + upstream PRs |
 
-Upstream contributions:
+### Product layers (Phase 2)
+
+| Package | Version | PyPI | Status |
+|---------|---------|------|--------|
+| forge-observe | v0.1.1 | `pip install forge-observe` | Shipped |
+| forge-infer-cloud | v0.1.2 | `pip install forge-infer-cloud` | Shipped |
+| forge-dashboard | v0.1.1 | `pip install forge-dashboard` | Shipped |
+| forge-studio | v0.1.0 | [GitHub](https://github.com/ArkaD171717/FORGE-studio) | Shipped (FastAPI + React) |
+| Open WebUI plugins | -- | [GitHub](https://github.com/ArkaD171717/FORGE-OpenWebUI) | Shipped (4 plugins) |
+
+### Upstream contributions
 
 | PR | Repo | Status |
 |----|------|--------|
@@ -23,21 +33,13 @@ Upstream contributions:
 | [#15901](https://github.com/ollama/ollama/pull/15901) | ollama/ollama | Open -- format constraint for all thinking parsers |
 | [#15902](https://github.com/ollama/ollama/pull/15902) | ollama/ollama | Open -- NVFP4 BF16 exemption for linear_attn |
 
-## What's built but not yet released
-
-These modules are code-complete and tested locally. They will be published to PyPI and/or deployed as hosted services based on community interest.
-
-| Module | What it does | What's left |
-|--------|-------------|-------------|
-| forge-observe | OTel instrumentation for thinking sessions | PyPI publish, docs |
-| forge-cloud | OpenAI-compatible reasoning-aware proxy | PyPI publish, hosted deployment |
-| forge-dashboard | Observability web UI (FastAPI + React) | Notification delivery, hosted deployment |
-
 ## What's planned
 
 **Multi-model support.** The session and routing layers are designed around Qwen3.6 today. Mistral Small 4 (configurable reasoning effort), GLM-5.1, and DeepSeek V4 (dual thinking/non-thinking mode) have the same patterns. Adding support means writing backend normalizers for each model's flag format -- the router and budget manager are already model-agnostic in structure.
 
-**Domain-specific agents.** Medical coding, legal research, deep research -- same Forge infra stack with domain-tuned routing policies. Not fine-tuning models; tuning the control plane. These only make sense to build once the core tools have real users asking for them.
+**Domain-specific agents (Phase 3).** Medical coding, legal research, deep research -- same Forge infra stack with domain-tuned routing policies. Not fine-tuning models; tuning the control plane. These only make sense to build once the core tools have real users asking for them.
+
+**Hosted deployment.** forge-cloud and forge-dashboard are both designed for self-hosting today. Managed hosting is planned if there's demand.
 
 ## How development is prioritized
 
