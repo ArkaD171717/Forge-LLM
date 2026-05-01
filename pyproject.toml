@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "forge-infer"
-version = "0.2.0"
+version = "0.2.1"
 description = "Inference control plane for reasoning-aware open-source models"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -30,6 +30,14 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+observe = ["forge-observe>=0.1.0"]
+cloud = ["forge-infer-cloud>=0.1.0"]
+dashboard = ["forge-dashboard>=0.1.0"]
+all = [
+    "forge-observe>=0.1.0",
+    "forge-infer-cloud>=0.1.0",
+    "forge-dashboard>=0.1.0",
+]
 dev = [
     "pytest>=7.0",
 ]
@@ -38,5 +46,6 @@ dev = [
 packages = ["forge"]
 
 [project.urls]
-Homepage = "https://github.com/ArkaD171717/Forge-Infer"
-Repository = "https://github.com/ArkaD171717/Forge-Infer"
+Homepage = "https://github.com/ArkaD171717/FORGE-Infer"
+Repository = "https://github.com/ArkaD171717/FORGE-Infer"
+Documentation = "https://arkad171717.github.io/FORGE-Infer/"
