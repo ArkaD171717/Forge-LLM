@@ -3,7 +3,7 @@ import forge
 
 def test_version_exists():
     assert isinstance(forge.__version__, str)
-    assert forge.__version__ == "0.2.1"
+    assert forge.__version__ == "0.3.0"
 
 
 def test_all_lists_submodules():
